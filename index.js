@@ -100,13 +100,17 @@ Parameters:
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Write a function called `getAverageGoals` that accepts a parameter `data` and returns the the average number of home team goals and away team goals scored per match (Hint: use .reduce and do this in 2 steps) */
 
-function getAverageGoals( ) {
-   /* code here */
+function getAverageGoals(data ) {
+  const homeGoalsAvg = data.reduce(function ( accumlator, item){
+    return accumlator + item['Home Team Goals'];
+  },0);
+  const awayGoalsAvg = data.reduce(function(accumulator, item){
+      return accumulator + item["Away Team Goals"];
+  },0);
+  return `${((homeGoalsAvg + awayGoalsAvg) / data.length).toFixed(2)}`;
+
+
 }
-
-
-
-
 
 
 /// 🥅 STRETCH 🥅 ///
